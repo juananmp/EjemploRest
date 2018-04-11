@@ -10,6 +10,7 @@ import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.QueryParam;
@@ -64,6 +65,18 @@ public class GenericResource {
       p.setEmail("pepe@gmail.com");
       p.setTelephone(6253474);
       return p;
+    }
+    
+    @POST
+    @Path("AlmacenarPersona")
+    @Produces(MediaType.APPLICATION_XML)
+    //Poner post --> application/xml --> http://localhost:8080/EjemploRest/webresources/generic/AlmacenarPersona
+    //marshall
+    public Persona recuperarPersona(Persona persona) {
+      Persona p = new Persona();
+      p = persona;
+      return p;
+
     }
 
     /**
