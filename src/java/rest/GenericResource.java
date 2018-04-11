@@ -12,6 +12,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -40,8 +41,18 @@ public class GenericResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getXml() {
+        //usar el plugin restlet le pasamos la ruta chrome-extension://aejoelaoggembcahagimdiliamlcdmfm/restlet_client.html
       
-       return "laputagana";
+       return "loquesea";
+    }
+    @GET
+    @Path("Suma")
+    @Produces(MediaType.TEXT_PLAIN)
+    public int getSuma(@QueryParam("valorA") int a, @QueryParam("valorB")int b) {
+        //localhost:8080/EjemploRest/webresources/generic/Suma?valorA=1&valorB=1
+      int suma;
+      suma = a+b;
+       return suma;
     }
 
     /**
