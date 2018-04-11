@@ -54,6 +54,17 @@ public class GenericResource {
       suma = a+b;
        return suma;
     }
+    //devolver xml introduzco parametros y deberia mostrar xmlç
+    @GET
+    @Path("CrearContacto")
+    @Produces(MediaType.APPLICATION_XML)
+    public Persona getPersona() {
+      Persona p = new Persona();
+      p.setName("pep");
+      p.setEmail("pepe@gmail.com");
+      p.setTelephone(6253474);
+      return p;
+    }
 
     /**
      * PUT method for updating or creating an instance of GenericResource
