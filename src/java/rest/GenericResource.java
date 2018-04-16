@@ -71,7 +71,7 @@ public class GenericResource {
     @POST
     @Path("AlmacenarPersona")
     @Produces(MediaType.APPLICATION_XML)
-    //Poner post --> application/xml --> http://localhost:8080/EjemploRest/webresources/generic/AlmacenarPersona
+    //desde cliente chrome Poner post --> application/xml --> http://localhost:8080/EjemploRest/webresources/generic/AlmacenarPersona
     //marshall
     public ArrayList<Persona> recuperarPersona() {
         Persona p = new Persona();
