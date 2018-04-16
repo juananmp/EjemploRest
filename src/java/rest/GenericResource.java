@@ -5,6 +5,7 @@
  */
 package rest;
 
+import java.util.ArrayList;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Consumes;
@@ -72,10 +73,12 @@ public class GenericResource {
     @Produces(MediaType.APPLICATION_XML)
     //Poner post --> application/xml --> http://localhost:8080/EjemploRest/webresources/generic/AlmacenarPersona
     //marshall
-    public Persona recuperarPersona(Persona persona) {
-      Persona p = new Persona();
-      p = persona;
-      return p;
+    public ArrayList<Persona> recuperarPersona() {
+        Persona p = new Persona();
+        ArrayList<Persona> a = new ArrayList<Persona>();
+        p = this.getPersona();
+        a.add(p);
+     return a;
 
     }
 
